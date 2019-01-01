@@ -2,7 +2,6 @@ var app    = require("../main.js");
 var io     = app.io;
 var socket = null;
 var fs     = require("fs"); // File system library
-// var axios = require("axios");
 
 app.get("/", async function(req, res){
   var string = "A string from the server.";
@@ -19,7 +18,7 @@ app.get("/about", function(req, res){
 
 app.post("/submit", function(req, res){
   var packet = JSON.stringify(req.body);
-  var message = new Buffer(packet);
+  var message = Buffer.from(packet);
   client.send(message, 0, message.length, 9000, "localhost");
   res.status(200);
 });
@@ -42,7 +41,6 @@ client.on("listening", () => {
 
 io.on("connection", function(socket){
   console.log("SOCKET CONNECTED!");
-  io.emit("testing", "REEEEEEEEEE");
 });
 
 app.use(function (req, res){
