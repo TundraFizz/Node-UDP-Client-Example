@@ -1,0 +1,22 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "This is a description.",
+  "main": "main.js",
+  "author": "Tundra Fizz",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "local1": "set mode=local&& set port=9001&& nodemon main.js",
+    "local2": "set mode=local&& set port=9002&& nodemon main.js",
+    "dev": "set mode=dev&& nodemon main.js",
+    "prod": "set mode=prod&& node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TundraFizz/TBD"
+  }
+}
